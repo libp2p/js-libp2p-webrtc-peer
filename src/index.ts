@@ -11,6 +11,7 @@ export interface WebRTCPeerEvents {
   'ready': CustomEvent
   'close': CustomEvent
   'ice-candidate': CustomEvent
+  'error': CustomEvent<Error>
 }
 
 export { WebRTCReceiver } from './receiver.js'
