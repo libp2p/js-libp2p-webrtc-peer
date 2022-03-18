@@ -15,3 +15,19 @@ export interface WebRTCPeerEvents {
 
 export { WebRTCReceiver } from './receiver.js'
 export { WebRTCInitiator } from './initiator.js'
+
+export interface WebRTCPeerInit {
+  id?: string
+  wrtc?: WRTC
+  peerConnectionConfig?: RTCConfiguration
+}
+
+export interface WebRTCReceiverInit extends WebRTCPeerInit {
+  answerOptions?: RTCAnswerOptions
+}
+
+export interface WebRTCInitiatorInit extends WebRTCPeerInit {
+  dataChannelLabel?: string
+  dataChannelInit?: RTCDataChannelInit
+  offerOptions?: RTCOfferOptions
+}

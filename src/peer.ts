@@ -7,9 +7,8 @@ import { Pushable, pushable } from 'it-pushable'
 import defer, { DeferredPromise } from 'p-defer'
 import { WebRTCDataChannel } from './channel.js'
 import delay from 'delay'
-import type { WRTC } from './index.js'
+import type { WebRTCPeerInit, WebRTCPeerEvents, WRTC } from './index.js'
 import type { Duplex } from 'it-stream-types'
-import type { WebRTCPeerEvents } from './index.js'
 
 // const ICECOMPLETE_TIMEOUT = 5 * 1000
 
@@ -43,12 +42,6 @@ function getBrowserRTC (): WRTC {
   return wrtc
 }
 
-export interface WebRTCPeerOptions {
-  id?: string
-  wrtc?: WRTC
-  peerConnectionConfig?: RTCConfiguration
-}
-
 export class WebRTCPeer extends EventEmitter<WebRTCPeerEvents> implements Duplex<Uint8Array> {
   public id: string
   public source: Pushable<Uint8Array>
@@ -60,7 +53,7 @@ export class WebRTCPeer extends EventEmitter<WebRTCPeerEvents> implements Duplex
   protected log: Logger
   private readonly connected: DeferredPromise<void>
 
-  constructor (opts: WebRTCPeerOptions & { logPrefix: string }) {
+  constructor (opts: WebRTCPeerInit & { logPrefix: string }) {
     super()
 
     this.id = opts.id ?? uint8ArrayToString(randombytes(4), 'hex').slice(0, 7)

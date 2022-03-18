@@ -1,17 +1,13 @@
 import { WebRTCPeer } from './peer.js'
 import { WebRTCHandshake } from './handshake.js'
-import type { WebRTCPeerOptions } from './peer.js'
 import type { WebRTCHandshakeOptions } from './handshake.js'
 import type { OfferSignal, Signal, CandidateSignal } from '@libp2p/webrtc-star-protocol'
-
-export interface WebRTCReceiverOptions extends WebRTCPeerOptions {
-  answerOptions?: RTCAnswerOptions
-}
+import type { WebRTCReceiverInit } from './index.js'
 
 export class WebRTCReceiver extends WebRTCPeer {
   private readonly handshake: WebRTCReceiverHandshake
 
-  constructor (opts: WebRTCReceiverOptions) {
+  constructor (opts: WebRTCReceiverInit) {
     super({
       ...opts,
       logPrefix: 'receiver'

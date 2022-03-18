@@ -5,22 +5,16 @@ import { toString as uint8ArrayToString } from 'uint8arrays/to-string'
 import { pEvent } from 'p-event'
 import delay from 'delay'
 import { CustomEvent } from '@libp2p/interfaces'
-import type { WebRTCPeerOptions } from './peer.js'
 import type { WebRTCHandshakeOptions } from './handshake.js'
 import type { AnswerSignal, Signal } from '@libp2p/webrtc-star-protocol'
+import type { WebRTCInitiatorInit } from './index.js'
 
 const ICECOMPLETE_TIMEOUT = 1000
-
-export interface WebRTCInitiatorOptions extends WebRTCPeerOptions {
-  dataChannelLabel?: string
-  dataChannelInit?: RTCDataChannelInit
-  offerOptions?: RTCOfferOptions
-}
 
 export class WebRTCInitiator extends WebRTCPeer {
   private readonly handshake: WebRTCInitiatorHandshake
 
-  constructor (opts: WebRTCInitiatorOptions) {
+  constructor (opts: WebRTCInitiatorInit) {
     super({
       ...opts,
       logPrefix: 'initiator'
