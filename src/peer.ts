@@ -9,7 +9,7 @@ import { WebRTCDataChannel } from './channel.js'
 import delay from 'delay'
 import type { WRTC } from './index.js'
 import type { Duplex } from 'it-stream-types'
-import { WebRTCPeerEvents } from './index.js'
+import type { WebRTCPeerEvents } from './index.js'
 
 // const ICECOMPLETE_TIMEOUT = 5 * 1000
 
@@ -28,8 +28,11 @@ function getBrowserRTC (): WRTC {
   }
 
   const wrtc: WRTC = {
+    // @ts-expect-error browser-specific properties
     RTCPeerConnection: globalThis.RTCPeerConnection ?? globalThis.mozRTCPeerConnection ?? globalThis.webkitRTCPeerConnection,
+    // @ts-expect-error browser-specific properties
     RTCSessionDescription: globalThis.RTCSessionDescription ?? globalThis.mozRTCSessionDescription ?? globalThis.webkitRTCSessionDescription,
+    // @ts-expect-error browser-specific properties
     RTCIceCandidate: globalThis.RTCIceCandidate ?? globalThis.mozRTCIceCandidate ?? globalThis.webkitRTCIceCandidate
   }
 
