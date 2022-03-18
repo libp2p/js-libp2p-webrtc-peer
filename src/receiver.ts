@@ -1,5 +1,6 @@
 import { WebRTCPeer } from './peer.js'
 import { WebRTCHandshake } from './handshake.js'
+import { CustomEvent } from '@libp2p/interfaces'
 import type { WebRTCHandshakeOptions } from './handshake.js'
 import type { OfferSignal, Signal, CandidateSignal } from '@libp2p/webrtc-star-protocol'
 import type { WebRTCReceiverInit } from './index.js'

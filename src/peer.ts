@@ -7,6 +7,7 @@ import { Pushable, pushable } from 'it-pushable'
 import defer, { DeferredPromise } from 'p-defer'
 import { WebRTCDataChannel } from './channel.js'
 import delay from 'delay'
+import { CustomEvent } from '@libp2p/interfaces'
 import type { WebRTCPeerInit, WebRTCPeerEvents, WRTC } from './index.js'
 import type { Duplex } from 'it-stream-types'
 
