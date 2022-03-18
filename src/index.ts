@@ -16,6 +16,7 @@ export interface WebRTCPeerEvents {
 
 export { WebRTCReceiver } from './receiver.js'
 export { WebRTCInitiator } from './initiator.js'
+export { WebRTCPeer } from './peer.js'
 
 export interface WebRTCPeerInit {
   id?: string
