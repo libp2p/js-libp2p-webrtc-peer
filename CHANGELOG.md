@@ -1,3 +1,16 @@
+### [1.0.2](https://github.com/libp2p/js-libp2p-webrtc-peer/compare/v1.0.1...v1.0.2) (2022-03-18)
+
+
+### Bug Fixes
+
+* import customevent ([9322aa1](https://github.com/libp2p/js-libp2p-webrtc-peer/commit/9322aa18c7916e05b8287799977562194cff9684))
+* update package config ([d130df9](https://github.com/libp2p/js-libp2p-webrtc-peer/commit/d130df91dba155210fe07923b7f985c21725373a))
+
+
+### Trivial Changes
+
+* fix linting ([f2d3c9d](https://github.com/libp2p/js-libp2p-webrtc-peer/commit/f2d3c9d93a2a697cc9187d0688fd047714cd980e))
+
 ### [1.0.1](https://github.com/libp2p/js-libp2p-webrtc-peer/compare/v1.0.0...v1.0.1) (2022-03-18)
 
 
