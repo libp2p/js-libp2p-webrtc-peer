@@ -1,3 +1,10 @@
+### [1.0.3](https://github.com/libp2p/js-libp2p-webrtc-peer/compare/v1.0.2...v1.0.3) (2022-03-19)
+
+
+### Bug Fixes
+
+* add protocol messages and trace logging ([95847d1](https://github.com/libp2p/js-libp2p-webrtc-peer/commit/95847d1b22a242a9da25191aa57f4f28177cf29d))
+
 ### [1.0.2](https://github.com/libp2p/js-libp2p-webrtc-peer/compare/v1.0.1...v1.0.2) (2022-03-18)
 
 
