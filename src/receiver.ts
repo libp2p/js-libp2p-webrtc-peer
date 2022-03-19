@@ -67,7 +67,7 @@ class WebRTCReceiverHandshake extends WebRTCHandshake {
   async handleOffer (signal: OfferSignal) {
     await this.peerConnection.setRemoteDescription(new this.wrtc.RTCSessionDescription(signal))
 
-    // add any candidates we were send before the offer arrived
+    // add any candidates we were sent before the offer arrived
     for (const candidate of this.iceCandidates) {
       await this.handleCandidate(candidate)
     }

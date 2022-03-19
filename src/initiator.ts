@@ -102,7 +102,7 @@ class WebRTCInitiatorHandshake extends WebRTCHandshake {
     log.trace('renegotiate', this.peerConnection.localDescription)
 
     this.dispatchEvent(new CustomEvent('signal', {
-      detail: this.peerConnection.localDescription
+      detail: offer
     }))
   }
 
