@@ -1,3 +1,10 @@
+### [1.0.4](https://github.com/libp2p/js-libp2p-webrtc-peer/compare/v1.0.3...v1.0.4) (2022-03-19)
+
+
+### Bug Fixes
+
+* send the offer as the signal ([cda3bfa](https://github.com/libp2p/js-libp2p-webrtc-peer/commit/cda3bfa2999ebba5c10a500277bc6a35d3fc4d90))
+
 ### [1.0.3](https://github.com/libp2p/js-libp2p-webrtc-peer/compare/v1.0.2...v1.0.3) (2022-03-19)
 
 
