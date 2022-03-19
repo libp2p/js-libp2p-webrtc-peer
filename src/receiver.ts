@@ -1,9 +1,11 @@
 import { WebRTCPeer } from './peer.js'
 import { WebRTCHandshake } from './handshake.js'
 import { CustomEvent } from '@libp2p/interfaces'
+import { logger } from '@libp2p/logger'
 import type { WebRTCHandshakeOptions } from './handshake.js'
-import type { OfferSignal, Signal, CandidateSignal } from '@libp2p/webrtc-star-protocol'
-import type { WebRTCReceiverInit } from './index.js'
+import type { WebRTCReceiverInit, OfferSignal, Signal, CandidateSignal } from './index.js'
+
+const log = logger('libp2p:webrtc-peer:receiver')
 
 export class WebRTCReceiver extends WebRTCPeer {
   private readonly handshake: WebRTCReceiverHandshake
@@ -53,6 +55,8 @@ class WebRTCReceiverHandshake extends WebRTCHandshake {
   }
 
   async handleRenegotiate () {
+    log.trace('renegotiate')
+
     this.dispatchEvent(new CustomEvent<Signal>('signal', {
       detail: {
         type: 'renegotiate'
@@ -72,6 +76,8 @@ class WebRTCReceiverHandshake extends WebRTCHandshake {
     const answer = await this.peerConnection.createAnswer(this.options.answerOptions)
 
     await this.peerConnection.setLocalDescription(answer)
+
+    log.trace('handle offer', this.peerConnection.localDescription)
 
     this.dispatchEvent(new CustomEvent('signal', {
       detail: this.peerConnection.localDescription

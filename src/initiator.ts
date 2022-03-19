@@ -5,9 +5,11 @@ import { toString as uint8ArrayToString } from 'uint8arrays/to-string'
 import { pEvent } from 'p-event'
 import delay from 'delay'
 import { CustomEvent } from '@libp2p/interfaces'
+import { logger } from '@libp2p/logger'
 import type { WebRTCHandshakeOptions } from './handshake.js'
-import type { AnswerSignal, Signal } from '@libp2p/webrtc-star-protocol'
-import type { WebRTCInitiatorInit } from './index.js'
+import type { WebRTCInitiatorInit, AnswerSignal, Signal } from './index.js'
+
+const log = logger('libp2p:webrtc-peer:initator')
 
 const ICECOMPLETE_TIMEOUT = 1000
 
@@ -63,15 +65,19 @@ class WebRTCInitiatorHandshake extends WebRTCHandshake {
         return
       }
 
-      this.dispatchEvent(new CustomEvent('signal', {
-        detail: {
-          type: 'candidate',
-          candidate: {
-            candidate: event.candidate.candidate,
-            sdpMLineIndex: event.candidate.sdpMLineIndex,
-            sdpMid: event.candidate.sdpMid
-          }
+      const signal = {
+        type: 'candidate',
+        candidate: {
+          candidate: event.candidate.candidate,
+          sdpMLineIndex: event.candidate.sdpMLineIndex,
+          sdpMid: event.candidate.sdpMid
         }
+      }
+
+      log.trace('create candidate', signal)
+
+      this.dispatchEvent(new CustomEvent('signal', {
+        detail: signal
       }))
       this.dispatchEvent(new CustomEvent('ice-candidate'))
     })
@@ -93,12 +99,16 @@ class WebRTCInitiatorHandshake extends WebRTCHandshake {
     await pEvent(this, 'ice-candidate')
     await delay(ICECOMPLETE_TIMEOUT)
 
+    log.trace('renegotiate', this.peerConnection.localDescription)
+
     this.dispatchEvent(new CustomEvent('signal', {
       detail: this.peerConnection.localDescription
     }))
   }
 
   async handleAnswer (signal: AnswerSignal) {
+    log.trace('handle answer', signal)
+
     await this.peerConnection.setRemoteDescription(new this.wrtc.RTCSessionDescription(signal))
     this.status = 'idle'
   }

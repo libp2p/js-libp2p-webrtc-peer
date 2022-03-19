@@ -1,5 +1,3 @@
-import type { Signal } from '@libp2p/webrtc-star-protocol'
-
 export interface WRTC {
   RTCPeerConnection: typeof RTCPeerConnection
   RTCSessionDescription: typeof RTCSessionDescription
@@ -33,3 +31,32 @@ export interface WebRTCInitiatorInit extends WebRTCPeerInit {
   dataChannelInit?: RTCDataChannelInit
   offerOptions?: RTCOfferOptions
 }
+
+export interface OfferSignal {
+  type: 'offer'
+  sdp: string
+}
+
+export interface AnswerSignal {
+  type: 'answer'
+  sdp: string
+}
+
+export interface CandidateSignal {
+  type: 'candidate'
+  candidate: {
+    candidate: string
+    sdpMLineIndex?: number
+    sdpMid?: string
+  }
+}
+
+export interface RenegotiateSignal {
+  type: 'renegotiate'
+}
+
+export interface GoodbyeSignal {
+  type: 'goodbye'
+}
+
+export type Signal = OfferSignal | AnswerSignal | CandidateSignal | RenegotiateSignal | GoodbyeSignal
