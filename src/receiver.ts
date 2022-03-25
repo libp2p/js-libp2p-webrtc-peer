@@ -10,7 +10,7 @@ const log = logger('libp2p:webrtc-peer:receiver')
 export class WebRTCReceiver extends WebRTCPeer {
   private readonly handshake: WebRTCReceiverHandshake
 
-  constructor (opts: WebRTCReceiverInit) {
+  constructor (opts: WebRTCReceiverInit = {}) {
     super({
       ...opts,
       logPrefix: 'receiver'
@@ -80,7 +80,7 @@ class WebRTCReceiverHandshake extends WebRTCHandshake {
     log.trace('handle offer', this.peerConnection.localDescription)
 
     this.dispatchEvent(new CustomEvent('signal', {
-      detail: this.peerConnection.localDescription
+      detail: this.peerConnection.localDescription ?? answer
     }))
   }
 
