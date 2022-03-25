@@ -8,7 +8,7 @@ import defer, { DeferredPromise } from 'p-defer'
 import { WebRTCDataChannel } from './channel.js'
 import delay from 'delay'
 import type { WebRTCPeerInit, WebRTCPeerEvents, WRTC } from './index.js'
-import type { Duplex } from 'it-stream-types'
+import type { Duplex, Sink } from 'it-stream-types'
 
 // const ICECOMPLETE_TIMEOUT = 5 * 1000
 
@@ -45,7 +45,7 @@ function getBrowserRTC (): WRTC {
 export class WebRTCPeer extends EventEmitter<WebRTCPeerEvents> implements Duplex<Uint8Array> {
   public id: string
   public source: Pushable<Uint8Array>
-  public sink: (source: AsyncIterable<Uint8Array> | Iterable<Uint8Array>) => Promise<void>
+  public sink: Sink<Uint8Array>
   public closed: boolean
   protected wrtc: WRTC
   protected peerConnection: RTCPeerConnection
