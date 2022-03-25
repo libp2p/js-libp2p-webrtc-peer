@@ -57,7 +57,7 @@ export class WebRTCPeer extends EventEmitter<WebRTCPeerEvents> implements Duplex
     super()
 
     this.id = opts.id ?? uint8ArrayToString(randombytes(4), 'hex').slice(0, 7)
-    this.log = logger(`libp2p:webrtc-star:peer:${opts.logPrefix}:${this.id}`)
+    this.log = logger(`libp2p:webrtc-peer:${opts.logPrefix}:${this.id}`)
     this.wrtc = opts.wrtc ?? getBrowserRTC()
     this.peerConnection = new this.wrtc.RTCPeerConnection(
       Object.assign({}, DEFAULT_PEER_CONNECTION_CONFIG, opts.peerConnectionConfig)
@@ -83,7 +83,9 @@ export class WebRTCPeer extends EventEmitter<WebRTCPeerEvents> implements Duplex
   }
 
   protected handleDataChannelEvent (event: { channel?: RTCDataChannel}) {
-    if (event.channel == null) {
+    const dataChannel = event.channel
+
+    if (dataChannel == null) {
       // In some situations `pc.createDataChannel()` returns `undefined` (in wrtc),
       // which is invalid behavior. Handle it gracefully.
       // See: https://github.com/feross/simple-peer/issues/163
@@ -95,7 +97,7 @@ export class WebRTCPeer extends EventEmitter<WebRTCPeerEvents> implements Duplex
       return
     }
 
-    this.channel = new WebRTCDataChannel(event.channel, {
+    this.channel = new WebRTCDataChannel(dataChannel, {
       log: this.log,
       onMessage: (event) => {
         this.source.push(new Uint8Array(event.data))

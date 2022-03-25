@@ -16,7 +16,7 @@ const ICECOMPLETE_TIMEOUT = 1000
 export class WebRTCInitiator extends WebRTCPeer {
   private readonly handshake: WebRTCInitiatorHandshake
 
-  constructor (opts: WebRTCInitiatorInit) {
+  constructor (opts: WebRTCInitiatorInit = {}) {
     super({
       ...opts,
       logPrefix: 'initiator'
@@ -102,7 +102,7 @@ class WebRTCInitiatorHandshake extends WebRTCHandshake {
     log.trace('renegotiate', this.peerConnection.localDescription)
 
     this.dispatchEvent(new CustomEvent('signal', {
-      detail: offer
+      detail: this.peerConnection.localDescription ?? offer
     }))
   }
 
