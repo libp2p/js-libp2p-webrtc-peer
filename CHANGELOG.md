@@ -1,3 +1,10 @@
+### [1.0.5](https://github.com/libp2p/js-libp2p-webrtc-peer/compare/v1.0.4...v1.0.5) (2022-03-25)
+
+
+### Bug Fixes
+
+* adds tests from simple-peer module ([#1](https://github.com/libp2p/js-libp2p-webrtc-peer/issues/1)) ([d3a97c5](https://github.com/libp2p/js-libp2p-webrtc-peer/commit/d3a97c5c0380bd7c7d8ed87651704c92e18423c6))
+
 ### [1.0.4](https://github.com/libp2p/js-libp2p-webrtc-peer/compare/v1.0.3...v1.0.4) (2022-03-19)
 
 
