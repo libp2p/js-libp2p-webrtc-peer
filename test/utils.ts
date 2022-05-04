@@ -1,9 +1,5 @@
 import { isBrowser } from 'wherearewe'
-import type { WRTC } from '../src'
-
-if (process.env.WRTC === 'wrtc') {
-  exports.wrtc = require('wrtc')
-}
+import type { WRTC } from '../src/index.js'
 
 export async function getWrtc (): Promise<WRTC | undefined> {
   if (isBrowser) {

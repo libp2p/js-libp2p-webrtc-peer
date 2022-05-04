@@ -1,4 +1,4 @@
-import { EventEmitter } from '@libp2p/interfaces'
+import { EventEmitter } from '@libp2p/interfaces/events'
 import errCode from 'err-code'
 import type { WebRTCPeerEvents, WRTC, Signal, OfferSignal, AnswerSignal, CandidateSignal, RenegotiateSignal, GoodbyeSignal } from './index.js'
 import type { Logger } from '@libp2p/logger'
