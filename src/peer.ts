@@ -1,5 +1,5 @@
 import { Logger, logger } from '@libp2p/logger'
-import { EventEmitter, CustomEvent } from '@libp2p/interfaces'
+import { EventEmitter, CustomEvent } from '@libp2p/interfaces/events'
 import errCode from 'err-code'
 import randombytes from 'iso-random-stream/src/random.js'
 import { toString as uint8ArrayToString } from 'uint8arrays/to-string'
