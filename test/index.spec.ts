@@ -1,4 +1,4 @@
-import { expect } from 'aegir/utils/chai.js'
+import { expect } from 'aegir/chai'
 import { WebRTCInitiator, WebRTCReceiver, WRTC } from '../src/index.js'
 import { isBrowser } from 'wherearewe'
 import { pEvent } from 'p-event'
