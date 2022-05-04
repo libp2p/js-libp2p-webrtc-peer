@@ -1,3 +1,10 @@
+### [1.0.7](https://github.com/libp2p/js-libp2p-webrtc-peer/compare/v1.0.6...v1.0.7) (2022-05-04)
+
+
+### Trivial Changes
+
+* update aegir ([#9](https://github.com/libp2p/js-libp2p-webrtc-peer/issues/9)) ([94381cc](https://github.com/libp2p/js-libp2p-webrtc-peer/commit/94381cc2a31289bcbf2115745484cad0d97a4719))
+
 ### [1.0.6](https://github.com/libp2p/js-libp2p-webrtc-peer/compare/v1.0.5...v1.0.6) (2022-05-04)
 
 
