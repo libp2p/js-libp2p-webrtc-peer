@@ -1,3 +1,10 @@
+### [1.0.8](https://github.com/libp2p/js-libp2p-webrtc-peer/compare/v1.0.7...v1.0.8) (2022-05-23)
+
+
+### Trivial Changes
+
+* **deps:** bump @libp2p/interfaces from 1.3.32 to 2.0.1 ([#10](https://github.com/libp2p/js-libp2p-webrtc-peer/issues/10)) ([8ab82f0](https://github.com/libp2p/js-libp2p-webrtc-peer/commit/8ab82f00667ce2b88fc5fa72016070fe95ea4cfb))
+
 ### [1.0.7](https://github.com/libp2p/js-libp2p-webrtc-peer/compare/v1.0.6...v1.0.7) (2022-05-04)
 
 
