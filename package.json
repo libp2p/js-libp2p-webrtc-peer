@@ -124,7 +124,7 @@
     "test:node": "aegir test -t node --cov",
     "test:chrome": "aegir test -t browser --cov",
     "test:firefox": "aegir test -t browser -- --browser firefox",
-    "release": "semantic-release"
+    "release": "aegir release"
   },
   "dependencies": {
     "@libp2p/interfaces": "^2.0.1",
