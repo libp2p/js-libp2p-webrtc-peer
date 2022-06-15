@@ -1,3 +1,14 @@
+## [2.0.0](https://github.com/libp2p/js-libp2p-webrtc-peer/compare/v1.0.9...v2.0.0) (2022-06-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* uses new single-issue libp2p interface modules
+
+### Features
+
+* update libp2p interfaces ([#15](https://github.com/libp2p/js-libp2p-webrtc-peer/issues/15)) ([12b8be4](https://github.com/libp2p/js-libp2p-webrtc-peer/commit/12b8be4245e74e74e3392d4186f8bb3acb487a78))
+
 ### [1.0.9](https://github.com/libp2p/js-libp2p-webrtc-peer/compare/v1.0.8...v1.0.9) (2022-05-23)
 
 
