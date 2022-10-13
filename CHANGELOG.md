@@ -1,3 +1,17 @@
+## [2.0.1](https://github.com/libp2p/js-libp2p-webrtc-peer/compare/v2.0.0...v2.0.1) (2022-10-13)
+
+
+### Trivial Changes
+
+* Update .github/workflows/stale.yml [skip ci] ([1b36558](https://github.com/libp2p/js-libp2p-webrtc-peer/commit/1b3655874307e20bc683427250cd78e4554e42a2))
+* update project config ([#20](https://github.com/libp2p/js-libp2p-webrtc-peer/issues/20)) ([96245d5](https://github.com/libp2p/js-libp2p-webrtc-peer/commit/96245d5d420da22a07746bbc1266a822dbd02e77))
+
+
+### Dependencies
+
+* bump uint8arrays from 3.1.1 to 4.0.2 ([#22](https://github.com/libp2p/js-libp2p-webrtc-peer/issues/22)) ([8495b1d](https://github.com/libp2p/js-libp2p-webrtc-peer/commit/8495b1db1a2a2094f9bffae67cb1d9d68fe3661b))
+* **dev:** bump wherearewe from 1.0.2 to 2.0.1 ([#17](https://github.com/libp2p/js-libp2p-webrtc-peer/issues/17)) ([a0d0ed5](https://github.com/libp2p/js-libp2p-webrtc-peer/commit/a0d0ed53f8187da7469282472f96c4dcedc65420))
+
 ## [2.0.0](https://github.com/libp2p/js-libp2p-webrtc-peer/compare/v1.0.9...v2.0.0) (2022-06-15)
 
 
