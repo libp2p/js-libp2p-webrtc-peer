@@ -141,7 +141,7 @@
     "it-stream-types": "^1.0.4",
     "p-defer": "^4.0.0",
     "p-event": "^5.0.1",
-    "uint8arrays": "^3.0.0"
+    "uint8arrays": "^4.0.2"
   },
   "devDependencies": {
     "@mapbox/node-pre-gyp": "^1.0.8",
