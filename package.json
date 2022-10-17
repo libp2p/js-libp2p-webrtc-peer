@@ -1,6 +1,6 @@
 {
   "name": "@libp2p/webrtc-peer",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Simple one-to-one WebRTC data channels",
   "author": "",
   "license": "Apache-2.0 OR MIT",

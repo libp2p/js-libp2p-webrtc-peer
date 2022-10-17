@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/libp2p/js-libp2p-webrtc-peer/compare/v2.0.1...v2.0.2) (2022-10-17)
+
+
+### Dependencies
+
+* **dev:** bump it-first from 1.0.7 to 2.0.0 ([#23](https://github.com/libp2p/js-libp2p-webrtc-peer/issues/23)) ([485eb3d](https://github.com/libp2p/js-libp2p-webrtc-peer/commit/485eb3d4c44858d5b168f38725f40d3f860f2238))
+
 ## [2.0.1](https://github.com/libp2p/js-libp2p-webrtc-peer/compare/v2.0.0...v2.0.1) (2022-10-13)
 
 
