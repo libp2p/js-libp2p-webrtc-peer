@@ -146,7 +146,7 @@
   "devDependencies": {
     "@mapbox/node-pre-gyp": "^1.0.8",
     "aegir": "^37.2.0",
-    "it-first": "^1.0.7",
+    "it-first": "^2.0.0",
     "it-pipe": "^2.0.3",
     "wherearewe": "^2.0.1",
     "wrtc": "^0.4.7"
